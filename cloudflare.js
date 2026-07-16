@@ -44,6 +44,7 @@ export async function spawnDataPublisher() {
           {
             location: "local",
             dataChannelName: "channel-one",
+            waitForAck: false,
           },
         ],
       }),
@@ -97,6 +98,7 @@ export async function spawnDataSubscriber(targetSessionId) {
             location: "remote",
             sessionId: targetSessionId,
             dataChannelName: "channel-one",
+            waitForAck: false,
           },
         ],
       }),
