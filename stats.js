@@ -1,8 +1,6 @@
 export class StatsCollector {
-  constructor(reportIntervalMs = 10000) {
+  constructor() {
     this.latencies = [];
-    this.reportIntervalMs = reportIntervalMs;
-    this.startReporting();
   }
 
   add(latency) {
@@ -40,12 +38,6 @@ export class StatsCollector {
       "P99": `${p99.toFixed(2)} ms`,
       "Max Latency": `${max.toFixed(2)} ms`
     });
-  }
-
-  startReporting() {
-    setInterval(() => {
-      this.report();
-    }, this.reportIntervalMs);
   }
 }
 
