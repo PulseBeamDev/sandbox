@@ -27,6 +27,7 @@ export class StatsCollector {
     const p90 = this.calculatePercentile(sorted, 90);
     const p95 = this.calculatePercentile(sorted, 95);
     const p99 = this.calculatePercentile(sorted, 99);
+    const p999 = this.calculatePercentile(sorted, 99.9);
     const max = sorted[sorted.length - 1];
 
     console.log(`=== Latency Stats (Samples: ${count}) ===`);
@@ -36,6 +37,7 @@ export class StatsCollector {
       "P90": `${p90.toFixed(2)} ms`,
       "P95": `${p95.toFixed(2)} ms`,
       "P99": `${p99.toFixed(2)} ms`,
+      "P99.9": `${p999.toFixed(2)} ms`,
       "Max Latency": `${max.toFixed(2)} ms`
     });
   }
