@@ -35,11 +35,11 @@ export async function spawnDataSubscriber() {
     const sentTime = view[0];
 
     const duration = now - sentTime;
-    console.log(`received RTT: ${duration.toFixed(4)} ms`);
     stats.add(duration);
     tick += 1;
 
     if (tick % 30 === 0) {
+      console.log("Pulsebeam");
       stats.report();
     }
   };

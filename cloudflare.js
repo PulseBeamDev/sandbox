@@ -4,9 +4,9 @@ import { StatsCollector } from "./stats.js";
 /// https://github.com/cloudflare/realtime-examples/blob/main/echo-datachannels/index.html
 
 // Cloudflare configuration constants
-const APP_ID = "";
+const APP_ID = "<APP_ID>"
 // ❗ Note: Keep this secure on the server-side in production.
-const APP_TOKEN = "";
+const APP_TOKEN = "<APP_TOKEN>"
 const API_BASE = `https://rtc.live.cloudflare.com/v1/apps/${APP_ID}`;
 
 
@@ -57,12 +57,17 @@ export async function spawnDataPublisher() {
   const channel = pc.createDataChannel("channel-one", {
     negotiated: true,
     id: channelRegisterResp.dataChannels[0].id,
+    maxRetransmits: 0,
+    ordered: false,
   });
 
   channel.onopen = () => {
     console.log("Publisher DataChannel opened.");
+    const buffer = new ArrayBuffer(8);
+    const view = new Float64Array(buffer);
     setInterval(() => {
-      channel.send(performance.now());
+      view[0] = performance.now();
+      channel.send(buffer);
     }, 500);
   };
 
@@ -109,19 +114,23 @@ export async function spawnDataSubscriber(targetSessionId) {
   const subscriberChannel = pc.createDataChannel("channel-one-subscribed", {
     negotiated: true,
     id: subscriptionResp.dataChannels[0].id,
+    maxRetransmits: 0,
+    ordered: false,
   });
 
   let tick = 0;
   subscriberChannel.onmessage = (ev) => {
-    const receivedTs = performance.now();
-    const sendTs = parseFloat(ev.data);
-    const duration = receivedTs - sendTs;
+    const now = performance.now();
 
-    console.log(`received RTT: ${duration.toFixed(4)} ms`);
+    const view = new Float64Array(ev.data);
+    const sentTime = view[0];
+
+    const duration = now - sentTime;
     stats.add(duration);
     tick += 1;
 
     if (tick % 30 === 0) {
+      console.log("Cloudflare");
       stats.report();
     }
   };
