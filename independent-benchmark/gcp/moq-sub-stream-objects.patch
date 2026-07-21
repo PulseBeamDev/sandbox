@@ -1,0 +1,22 @@
+diff --git a/moq-sub/src/media.rs b/moq-sub/src/media.rs
+--- a/moq-sub/src/media.rs
++++ b/moq-sub/src/media.rs
+@@ -192,10 +192,14 @@ impl<O: AsyncWrite + Send + Unpin + 'static> Media<O> {
+                 group.group_id,
+                 object.object_id
+             );
+-            let out = out.clone();
+-            let buf = Self::recv_object(object).await?;
+-
+-            out.lock().await.write_all(&buf).await?;
++            // Preserve object ordering by holding the output lock for the full
++            // object, but forward each available transport chunk immediately.
++            // The stock CLI buffers the complete object into a Vec first.
++            let mut object = object;
++            let mut output = out.lock().await;
++            while let Some(chunk) = object.read().await? {
++                output.write_all(&chunk).await?;
++            }
+         }
+ 
+         Ok(())

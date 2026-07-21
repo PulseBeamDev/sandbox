@@ -1,0 +1,58 @@
+# Local dependencies and downloaded source trees
+node_modules/
+.tools/
+.wrangler/
+
+# Rust build output from every benchmark adapter and downloaded dependency
+**/target/
+
+# Raw benchmark output is retained locally and shared as a separate evidence
+# archive. New runs use date/provider suffixes, so ignore every results tree.
+results*/
+*.jsonl
+*.stdout
+*.stderr
+*.log
+
+# Generated aggregate data and diagnostic output. The selected reviewer-facing
+# reports and charts below are intentionally committed instead.
+*-analysis*.json
+distributed-analysis*.json
+media-analysis*.json
+moq-analysis.json
+moq-data-analysis-gcp.json
+moq-stress-analysis.json
+cloudflare-startup-observations-gcp.json
+
+# Generated figures are opt-in. This prevents preliminary and diagnostic plots
+# from being staged accidentally while retaining the two frozen final figures.
+*.png
+*.svg
+!fair-media-benchmark-all-zones.png
+!fair-media-benchmark-all-zones.svg
+!transport-benchmark-full-all-zones.png
+!transport-benchmark-full-all-zones.svg
+
+# Historical reports describe superseded qualification runs. They remain in
+# the local research tree but are not part of the vendor-review packet.
+GCP-BENCHMARK-REPORT.md
+MEDIA-BENCHMARK.md
+REPORT.md
+render-cloudflare-managed-moq-preliminary.mjs
+render-focused-media-verdict.mjs
+render-gcp-comparison.mjs
+render-preliminary-moq-comparison.mjs
+
+# Benchmark credentials and short-lived certificates must never be committed.
+*.jwk
+*.jwt
+*.key
+*.pem
+*.crt
+*.csr
+*.cnf
+*.srl
+
+# Common local noise
+.DS_Store
+*~

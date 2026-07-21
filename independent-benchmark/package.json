@@ -1,0 +1,28 @@
+{
+  "name": "transport-benchmark",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "benchmark": "node benchmark.mjs",
+    "analyze": "node analyze.mjs",
+    "analyze:distributed": "node analyze-distributed.mjs",
+    "analyze:moq": "node analyze-moq.mjs",
+    "analyze:media": "node analyze-media.mjs",
+    "correlate": "node correlate.mjs",
+    "distributed": "node distributed-agent.mjs",
+    "moq:build": "cargo build --release --manifest-path moq-agent/Cargo.toml",
+    "moq:run": "cargo run --release --manifest-path moq-agent/Cargo.toml --",
+    "moq:stress": "node stress-moq.mjs",
+    "media:test-codec": "node media/test-codec.mjs",
+    "media:test-codec-fmp4": "node media/test-fmp4-codec.mjs",
+    "media:qualify-workload": "node media/qualify-workload.mjs",
+    "media:webrtc": "node media/webrtc-agent.mjs",
+    "media:moq": "node media/moq-agent.mjs",
+    "media:install-moq-pub": "cargo install --locked --root .tools/moq-media moq-pub@0.9.0",
+    "media:install-moq-sub": "cargo install --locked --root .tools/moq-media moq-sub@0.4.11",
+    "media:install-moq-relay": "cargo install --locked --root .tools/moq-media moq-relay-ietf@0.7.22"
+  },
+  "dependencies": {
+    "node-datachannel": "0.32.3"
+  }
+}

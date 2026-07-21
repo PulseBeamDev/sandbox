@@ -1,0 +1,19 @@
+[package]
+name = "moq-dev-benchmark-agent"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[dependencies]
+anyhow = "1"
+bytes = "1"
+clap = { version = "4", features = ["derive", "env"] }
+moq-native = { path = "../.tools/moq-dev-src/rs/moq-native", features = ["quinn", "aws-lc-rs"] }
+moq-net = { path = "../.tools/moq-dev-src/rs/moq-net" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }

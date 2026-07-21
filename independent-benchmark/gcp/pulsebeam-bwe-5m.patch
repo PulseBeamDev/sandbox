@@ -1,0 +1,13 @@
+diff --git a/pulsebeam/src/control/negotiator.rs b/pulsebeam/src/control/negotiator.rs
+index 917cb21..934eef7 100644
+--- a/pulsebeam/src/control/negotiator.rs
++++ b/pulsebeam/src/control/negotiator.rs
+@@ -99,7 +99,7 @@ impl Negotiator {
+             )
+             // .set_stats_interval(Some(Duration::from_millis(200)))
+             // TODO: enable bwe
+-            .enable_bwe(Some(str0m::bwe::Bitrate::kbps(500)))
++            .enable_bwe(Some(str0m::bwe::Bitrate::mbps(5)))
+             // Uncomment this to see statistics
+             // .set_stats_interval(Some(Duration::from_secs(1)))
+             // enable for compatibility, some clients don't support remote ice-lite

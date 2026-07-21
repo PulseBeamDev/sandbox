@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1440" viewBox="0 0 1800 1440" role="img" aria-labelledby="title desc">
+<title id="title">Fair global media benchmark: MoQ, PulseBeam, and Cloudflare</title>
+<desc id="desc">Capture-to-decoded H.264 latency, loss, freezes, and join time from California to Virginia, Frankfurt, and Tokyo. MoQ has the lowest median and 99th-percentile latency in every region and receives all measured frames.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111d"/><stop offset="1" stop-color="#0b1928"/></linearGradient>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="135%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#020812" flood-opacity=".34"/></filter>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#627d96"/></marker>
+  <style>
+    .title{font:700 44px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f4f8fb;letter-spacing:-.8px}
+    .subtitle{font:400 18px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#91a5b9}
+    .eyebrow{font:650 13px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#91a5b9;letter-spacing:1.2px}
+    .topology{font:650 17px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f4f8fb}
+    .topology-sub{font:400 12px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#91a5b9}
+    .region{font:700 25px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f4f8fb}
+    .region-sub{font:400 13px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#91a5b9}
+    .provider{font:650 16px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f4f8fb}
+    .qualifier{font:400 12px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#91a5b9}
+    .metric{font:650 15px "SFMono-Regular",Consolas,monospace;fill:#e8eff5}
+    .detail{font:400 12px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#91a5b9}
+    .axis{font:500 11px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#71869a}
+    .summary-name{font:650 17px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f4f8fb}
+    .summary-value{font:700 27px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f4f8fb}
+    .summary-detail{font:400 13px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#91a5b9}
+    .verdict{font:650 22px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f4f8fb}
+    .verdict-detail{font:400 15px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#91a5b9}
+    .note{font:400 12px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#71869a}
+    .grid{stroke:#294158;stroke-width:1;opacity:.58}.divider{stroke:#20384d;stroke-width:1}
+  </style>
+</defs>
+<rect width="1800" height="1440" fill="url(#bg)"/>
+<text class="title" x="55" y="68">Fair global media benchmark</text>
+<text class="subtitle" x="55" y="103">Capture → H.264 encode → platform → decode · 1280×720p30 · strict 4.0 Mbps · 3 × 5 min per provider and region</text>
+<g transform="translate(55 132)"><rect width="1690" height="142" rx="18" fill="#0d1d2e" stroke="#1c344a" filter="url(#shadow)"/>
+<text class="eyebrow" x="24" y="30">TEST TOPOLOGY · ONE REGIONAL SUBSCRIBER ACTIVE AT A TIME · 12 vCPUs MAX</text>
+<rect x="24" y="49" width="270" height="68" rx="12" fill="#11263a" stroke="#29455e"/>
+<text class="topology" x="39" y="77">California publisher</text>
+<text class="topology-sub" x="39" y="99">us-west2-a · c3-standard-4</text>
+<rect x="330" y="49" width="270" height="68" rx="12" fill="#11263a" stroke="#29455e"/>
+<text class="topology" x="345" y="77">California relay</text>
+<text class="topology-sub" x="345" y="99">MoQ / PulseBeam · isolated</text>
+<line x1="294" y1="84" x2="324" y2="84" stroke="#627d96" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="600" y1="84" x2="742" y2="84" stroke="#627d96" stroke-width="2" marker-end="url(#arrow)"/>
+<text class="topology-sub" x="671" y="68" text-anchor="middle">sequential</text>
+<text class="topology-sub" x="671" y="105" text-anchor="middle">rotation</text>
+<text class="eyebrow" x="780" y="42">SUBSCRIBER ZONES · NOT A SERIAL PATH</text>
+<rect x="780" y="49" width="244" height="68" rx="12" fill="#11263a" stroke="#29455e"/>
+<text class="topology" x="795" y="77">Virginia</text>
+<text class="topology-sub" x="795" y="99">us-east4-a</text>
+<rect x="1100" y="49" width="244" height="68" rx="12" fill="#11263a" stroke="#29455e"/>
+<text class="topology" x="1115" y="77">Frankfurt</text>
+<text class="topology-sub" x="1115" y="99">europe-west3-a</text>
+<rect x="1420" y="49" width="244" height="68" rx="12" fill="#11263a" stroke="#29455e"/>
+<text class="topology" x="1435" y="77">Tokyo</text>
+<text class="topology-sub" x="1435" y="99">asia-northeast1-b</text>
+<text class="topology-sub" x="465" y="130" text-anchor="middle">Cloudflare uses its managed route; shown as the product-stack reference</text>
+</g>
+<g transform="translate(55 310)"><rect width="540" height="650" rx="20" fill="#0d1d2e" stroke="#1c344a" filter="url(#shadow)"/>
+<text class="region" x="25" y="42">California → Virginia</text>
+<text class="region-sub" x="25" y="66">P50 circle · P99 diamond · lower is better</text>
+<line class="grid" x1="192" y1="92" x2="192" y2="515"/>
+<text class="axis" x="192" y="84" text-anchor="middle">160</text>
+<line class="grid" x1="253.6" y1="92" x2="253.6" y2="515"/>
+<text class="axis" x="253.6" y="84" text-anchor="middle">180</text>
+<line class="grid" x1="315.2" y1="92" x2="315.2" y2="515"/>
+<text class="axis" x="315.2" y="84" text-anchor="middle">200</text>
+<line class="grid" x1="376.79999999999995" y1="92" x2="376.79999999999995" y2="515"/>
+<text class="axis" x="376.79999999999995" y="84" text-anchor="middle">220</text>
+<line class="grid" x1="438.4" y1="92" x2="438.4" y2="515"/>
+<text class="axis" x="438.4" y="84" text-anchor="middle">240</text>
+<line class="grid" x1="500" y1="92" x2="500" y2="515"/>
+<text class="axis" x="500" y="84" text-anchor="middle">260</text>
+<rect x="25" y="120" width="11" height="11" rx="2" fill="#35d3a4"/>
+<text class="provider" x="47" y="131">MoQ · moq-rs</text>
+<text class="qualifier" x="47" y="152">self-hosted California relay</text>
+<line x1="249.95944000000003" y1="170" x2="270.2233143999999" y2="170" stroke="#35d3a4" stroke-width="6" stroke-linecap="round" opacity=".65"/>
+<circle cx="249.95944000000003" cy="170" r="8" fill="#35d3a4" stroke="#0d1d2e" stroke-width="3"/>
+<polygon points="270.2233143999999,161 279.2233143999999,170 270.2233143999999,179 261.2233143999999,170" fill="#35d3a4" stroke="#0d1d2e" stroke-width="2"/>
+<text class="metric" x="47" y="204">P50 178.8 · P99 185.4 ms</text>
+<text class="detail" x="47" y="226">27,000/27,000 · 0% loss · 0 freezes &gt;250 ms</text>
+<text class="detail" x="47" y="246">join P50 714 ms · 0 invalid markers</text>
+<rect x="25" y="262" width="11" height="11" rx="2" fill="#42bff5"/>
+<text class="provider" x="47" y="273">PulseBeam</text>
+<text class="qualifier" x="47" y="294">5 Mbps initial-BWE variant</text>
+<line x1="316.4628" y1="312" x2="338.54720080000004" y2="312" stroke="#42bff5" stroke-width="6" stroke-linecap="round" opacity=".65"/>
+<circle cx="316.4628" cy="312" r="8" fill="#42bff5" stroke="#0d1d2e" stroke-width="3"/>
+<polygon points="338.54720080000004,303 347.54720080000004,312 338.54720080000004,321 329.54720080000004,312" fill="#42bff5" stroke="#0d1d2e" stroke-width="2"/>
+<text class="metric" x="47" y="346">P50 200.4 · P99 207.6 ms</text>
+<text class="detail" x="47" y="368">26,975/27,000 · 0.093% loss · 1 freezes &gt;250 ms</text>
+<text class="detail" x="47" y="388">join P50 2,627 ms · 24 invalid markers</text>
+<rect x="25" y="404" width="11" height="11" rx="2" fill="#f5a742"/>
+<text class="provider" x="47" y="415">Cloudflare</text>
+<text class="qualifier" x="47" y="436">managed Realtime SFU</text>
+<line x1="258.9592" y1="454" x2="287.29101119999996" y2="454" stroke="#f5a742" stroke-width="6" stroke-linecap="round" opacity=".65"/>
+<circle cx="258.9592" cy="454" r="8" fill="#f5a742" stroke="#0d1d2e" stroke-width="3"/>
+<polygon points="287.29101119999996,445 296.29101119999996,454 287.29101119999996,463 278.29101119999996,454" fill="#f5a742" stroke="#0d1d2e" stroke-width="2"/>
+<text class="metric" x="47" y="488">P50 181.7 · P99 190.9 ms</text>
+<text class="detail" x="47" y="510">26,869/27,000 · 0.485% loss · 5 freezes &gt;250 ms</text>
+<text class="detail" x="47" y="530">join P50 3,322 ms · 118 invalid markers</text>
+<line class="divider" x1="25" y1="540" x2="515" y2="540"/>
+<text class="eyebrow" x="25" y="570">REGIONAL READOUT</text>
+<text class="summary-detail" x="25" y="598">MoQ leads P50 by 2.9 ms</text>
+<text class="summary-detail" x="25" y="622">and P99 by 5.5 ms; 0 lost frames.</text>
+</g>
+<g transform="translate(630 310)"><rect width="540" height="650" rx="20" fill="#0d1d2e" stroke="#1c344a" filter="url(#shadow)"/>
+<text class="region" x="25" y="42">California → Frankfurt</text>
+<text class="region-sub" x="25" y="66">P50 circle · P99 diamond · lower is better</text>
+<line class="grid" x1="192" y1="92" x2="192" y2="515"/>
+<text class="axis" x="192" y="84" text-anchor="middle">160</text>
+<line class="grid" x1="253.6" y1="92" x2="253.6" y2="515"/>
+<text class="axis" x="253.6" y="84" text-anchor="middle">180</text>
+<line class="grid" x1="315.2" y1="92" x2="315.2" y2="515"/>
+<text class="axis" x="315.2" y="84" text-anchor="middle">200</text>
+<line class="grid" x1="376.79999999999995" y1="92" x2="376.79999999999995" y2="515"/>
+<text class="axis" x="376.79999999999995" y="84" text-anchor="middle">220</text>
+<line class="grid" x1="438.4" y1="92" x2="438.4" y2="515"/>
+<text class="axis" x="438.4" y="84" text-anchor="middle">240</text>
+<line class="grid" x1="500" y1="92" x2="500" y2="515"/>
+<text class="axis" x="500" y="84" text-anchor="middle">260</text>
+<rect x="25" y="120" width="11" height="11" rx="2" fill="#35d3a4"/>
+<text class="provider" x="47" y="131">MoQ · moq-rs</text>
+<text class="qualifier" x="47" y="152">self-hosted California relay</text>
+<line x1="382.49954" y1="170" x2="401.60635080000003" y2="170" stroke="#35d3a4" stroke-width="6" stroke-linecap="round" opacity=".65"/>
+<circle cx="382.49954" cy="170" r="8" fill="#35d3a4" stroke="#0d1d2e" stroke-width="3"/>
+<polygon points="401.60635080000003,161 410.60635080000003,170 401.60635080000003,179 392.60635080000003,170" fill="#35d3a4" stroke="#0d1d2e" stroke-width="2"/>
+<text class="metric" x="47" y="204">P50 221.9 · P99 228.1 ms</text>
+<text class="detail" x="47" y="226">27,000/27,000 · 0% loss · 0 freezes &gt;250 ms</text>
+<text class="detail" x="47" y="246">join P50 1,528 ms · 0 invalid markers</text>
+<rect x="25" y="262" width="11" height="11" rx="2" fill="#42bff5"/>
+<text class="provider" x="47" y="273">PulseBeam</text>
+<text class="qualifier" x="47" y="294">5 Mbps initial-BWE variant</text>
+<line x1="448.92744" y1="312" x2="470.39547120000003" y2="312" stroke="#42bff5" stroke-width="6" stroke-linecap="round" opacity=".65"/>
+<circle cx="448.92744" cy="312" r="8" fill="#42bff5" stroke="#0d1d2e" stroke-width="3"/>
+<polygon points="470.39547120000003,303 479.39547120000003,312 470.39547120000003,321 461.39547120000003,312" fill="#42bff5" stroke="#0d1d2e" stroke-width="2"/>
+<text class="metric" x="47" y="346">P50 243.4 · P99 250.4 ms</text>
+<text class="detail" x="47" y="368">26,999/27,000 · 0.004% loss · 0 freezes &gt;250 ms</text>
+<text class="detail" x="47" y="388">join P50 3,157 ms · 1 invalid markers</text>
+<rect x="25" y="404" width="11" height="11" rx="2" fill="#f5a742"/>
+<text class="provider" x="47" y="415">Cloudflare</text>
+<text class="qualifier" x="47" y="436">managed Realtime SFU</text>
+<line x1="397.70088" y1="454" x2="432.55489919999997" y2="454" stroke="#f5a742" stroke-width="6" stroke-linecap="round" opacity=".65"/>
+<circle cx="397.70088" cy="454" r="8" fill="#f5a742" stroke="#0d1d2e" stroke-width="3"/>
+<polygon points="432.55489919999997,445 441.55489919999997,454 432.55489919999997,463 423.55489919999997,454" fill="#f5a742" stroke="#0d1d2e" stroke-width="2"/>
+<text class="metric" x="47" y="488">P50 226.8 · P99 238.1 ms</text>
+<text class="detail" x="47" y="510">26,720/27,000 · 1.037% loss · 14 freezes &gt;250 ms</text>
+<text class="detail" x="47" y="530">join P50 4,321 ms · 228 invalid markers</text>
+<line class="divider" x1="25" y1="540" x2="515" y2="540"/>
+<text class="eyebrow" x="25" y="570">REGIONAL READOUT</text>
+<text class="summary-detail" x="25" y="598">MoQ leads P50 by 4.9 ms</text>
+<text class="summary-detail" x="25" y="622">and P99 by 10 ms; 0 lost frames.</text>
+</g>
+<g transform="translate(1205 310)"><rect width="540" height="650" rx="20" fill="#0d1d2e" stroke="#1c344a" filter="url(#shadow)"/>
+<text class="region" x="25" y="42">California → Tokyo</text>
+<text class="region-sub" x="25" y="66">P50 circle · P99 diamond · lower is better</text>
+<line class="grid" x1="192" y1="92" x2="192" y2="515"/>
+<text class="axis" x="192" y="84" text-anchor="middle">160</text>
+<line class="grid" x1="253.6" y1="92" x2="253.6" y2="515"/>
+<text class="axis" x="253.6" y="84" text-anchor="middle">180</text>
+<line class="grid" x1="315.2" y1="92" x2="315.2" y2="515"/>
+<text class="axis" x="315.2" y="84" text-anchor="middle">200</text>
+<line class="grid" x1="376.79999999999995" y1="92" x2="376.79999999999995" y2="515"/>
+<text class="axis" x="376.79999999999995" y="84" text-anchor="middle">220</text>
+<line class="grid" x1="438.4" y1="92" x2="438.4" y2="515"/>
+<text class="axis" x="438.4" y="84" text-anchor="middle">240</text>
+<line class="grid" x1="500" y1="92" x2="500" y2="515"/>
+<text class="axis" x="500" y="84" text-anchor="middle">260</text>
+<rect x="25" y="120" width="11" height="11" rx="2" fill="#35d3a4"/>
+<text class="provider" x="47" y="131">MoQ · moq-rs</text>
+<text class="qualifier" x="47" y="152">self-hosted California relay</text>
+<line x1="303.63460000000003" y1="170" x2="326.7500616" y2="170" stroke="#35d3a4" stroke-width="6" stroke-linecap="round" opacity=".65"/>
+<circle cx="303.63460000000003" cy="170" r="8" fill="#35d3a4" stroke="#0d1d2e" stroke-width="3"/>
+<polygon points="326.7500616,161 335.7500616,170 326.7500616,179 317.7500616,170" fill="#35d3a4" stroke="#0d1d2e" stroke-width="2"/>
+<text class="metric" x="47" y="204">P50 196.2 · P99 203.8 ms</text>
+<text class="detail" x="47" y="226">27,000/27,000 · 0% loss · 0 freezes &gt;250 ms</text>
+<text class="detail" x="47" y="246">join P50 916 ms · 0 invalid markers</text>
+<rect x="25" y="262" width="11" height="11" rx="2" fill="#42bff5"/>
+<text class="provider" x="47" y="273">PulseBeam</text>
+<text class="qualifier" x="47" y="294">5 Mbps initial-BWE variant</text>
+<line x1="370.50140000000005" y1="312" x2="396.0347232" y2="312" stroke="#42bff5" stroke-width="6" stroke-linecap="round" opacity=".65"/>
+<circle cx="370.50140000000005" cy="312" r="8" fill="#42bff5" stroke="#0d1d2e" stroke-width="3"/>
+<polygon points="396.0347232,303 405.0347232,312 396.0347232,321 387.0347232,312" fill="#42bff5" stroke="#0d1d2e" stroke-width="2"/>
+<text class="metric" x="47" y="346">P50 218 · P99 226.2 ms</text>
+<text class="detail" x="47" y="368">27,000/27,000 · 0% loss · 0 freezes &gt;250 ms</text>
+<text class="detail" x="47" y="388">join P50 2,852 ms · 0 invalid markers</text>
+<rect x="25" y="404" width="11" height="11" rx="2" fill="#f5a742"/>
+<text class="provider" x="47" y="415">Cloudflare</text>
+<text class="qualifier" x="47" y="436">managed Realtime SFU</text>
+<line x1="320.57460000000003" y1="454" x2="356.3468904" y2="454" stroke="#f5a742" stroke-width="6" stroke-linecap="round" opacity=".65"/>
+<circle cx="320.57460000000003" cy="454" r="8" fill="#f5a742" stroke="#0d1d2e" stroke-width="3"/>
+<polygon points="356.3468904,445 365.3468904,454 356.3468904,463 347.3468904,454" fill="#f5a742" stroke="#0d1d2e" stroke-width="2"/>
+<text class="metric" x="47" y="488">P50 201.7 · P99 213.4 ms</text>
+<text class="detail" x="47" y="510">26,878/27,000 · 0.452% loss · 8 freezes &gt;250 ms</text>
+<text class="detail" x="47" y="530">join P50 4,309 ms · 111 invalid markers</text>
+<line class="divider" x1="25" y1="540" x2="515" y2="540"/>
+<text class="eyebrow" x="25" y="570">REGIONAL READOUT</text>
+<text class="summary-detail" x="25" y="598">MoQ leads P50 by 5.5 ms</text>
+<text class="summary-detail" x="25" y="622">and P99 by 9.6 ms; 0 lost frames.</text>
+</g>
+<g transform="translate(55 995)"><text class="eyebrow" x="0" y="18">ALL THREE REGIONS · SUMMED OUTCOMES</text>
+<rect x="0" y="36" width="540" height="138" rx="18" fill="#0d1d2e" stroke="#1c344a" filter="url(#shadow)"/>
+<rect x="23" y="59" width="11" height="11" rx="2" fill="#35d3a4"/>
+<text class="summary-name" x="45" y="70">MoQ · moq-rs</text>
+<text class="summary-value" x="23" y="108">81,000 / 81,000</text>
+<text class="summary-detail" x="23" y="135">0% loss · 0 invalid · 0 freezes &gt;250 ms</text>
+<text class="summary-detail" x="23" y="157">lowest P50 + P99 in 3/3 regions</text>
+<rect x="575" y="36" width="540" height="138" rx="18" fill="#0d1d2e" stroke="#1c344a" filter="url(#shadow)"/>
+<rect x="598" y="59" width="11" height="11" rx="2" fill="#42bff5"/>
+<text class="summary-name" x="620" y="70">PulseBeam</text>
+<text class="summary-value" x="598" y="108">80,974 / 81,000</text>
+<text class="summary-detail" x="598" y="135">0.032% loss · 25 invalid · 1 freezes &gt;250 ms</text>
+<text class="summary-detail" x="598" y="157">three accepted five-minute trials per region</text>
+<rect x="1150" y="36" width="540" height="138" rx="18" fill="#0d1d2e" stroke="#1c344a" filter="url(#shadow)"/>
+<rect x="1173" y="59" width="11" height="11" rx="2" fill="#f5a742"/>
+<text class="summary-name" x="1195" y="70">Cloudflare</text>
+<text class="summary-value" x="1173" y="108">80,467 / 81,000</text>
+<text class="summary-detail" x="1173" y="135">0.658% loss · 457 invalid · 27 freezes &gt;250 ms</text>
+<text class="summary-detail" x="1173" y="157">three accepted five-minute trials per region</text>
+</g>
+<g transform="translate(55 1215)"><rect width="1690" height="142" rx="20" fill="#10263a" stroke="#2c4e68" filter="url(#shadow)"/>
+<text class="eyebrow" x="25" y="34">FROZEN MATRIX VERDICT</text>
+<text class="verdict" x="25" y="70">MoQ is the strongest result in this frozen test matrix.</text>
+<text class="verdict-detail" x="25" y="100">It wins every region on P50 and P99, delivers 81,000/81,000 frames, and records zero &gt;250 ms freezes.</text>
+<text class="verdict-detail" x="25" y="125">Treat this as a product-stack result: Cloudflare is managed; MoQ and PulseBeam use the matched California relay VM.</text>
+</g>
+<text class="note" x="55" y="1400">Headless glass-to-glass proxy: capture timestamp is embedded before encode and recovered after decode; camera exposure and display scanout are excluded.</text>
+<text class="note" x="1745" y="1400" text-anchor="end">GCP · July 18–19, 2026 · 27 accepted trials · 243,000 expected frames</text>
+</svg>
