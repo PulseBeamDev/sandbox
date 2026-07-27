@@ -178,7 +178,7 @@ function encoderRateControl(media) {
     ],
     x264: [
       "scenecut=0", "sync-lookahead=0", "rc-lookahead=0",
-      ...(strictCbr ? ["nal-hrd=cbr", "force-cfr=1"] : []),
+      ...(strictCbr ? ["force-cfr=1"] : []),
     ].join(":"),
   };
 }
